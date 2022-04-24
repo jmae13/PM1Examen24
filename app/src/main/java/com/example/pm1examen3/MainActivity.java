@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
     EditText textPeriodo;
     Button buttonfoto,buttonGuardar,buttonVista;
 
-  //Hablemos de array
+  //Trabajemos con array
     ArrayList<String> arrayTiempo;
 
     String currentPhotoPath;
@@ -179,9 +179,6 @@ public class MainActivity extends AppCompatActivity {
         String mensaje="";
 
         if(isTextEmpty(Descripcion)) mensaje = "Llenar todos los campos";
-        else if(!isText(Descripcion)) mensaje = "";
-        else if(isTextEmpty(Cantidad))mensaje = "";
-
 
 
         if(!isTextEmpty(mensaje)){
@@ -239,8 +236,8 @@ public class MainActivity extends AppCompatActivity {
         File storageDir = getExternalFilesDir(Environment.DIRECTORY_PICTURES);
 
         File image = File.createTempFile(
-                imageFileName,  /* prefix */
-                ".jpg",         /* suffix */
+                imageFileName,
+                ".jpg",
                 storageDir      /* directory */
         );
 
@@ -284,7 +281,7 @@ public class MainActivity extends AppCompatActivity {
 
     private static boolean isText(String text){
 
-        // Validando un texto que solo acepte letras sin importar tamaño
+
         Pattern pat = Pattern.compile("^[a-zA-ZáéíóúÁÉÓÚÍ ]+$");
         Matcher mat = pat.matcher(text);
         return (mat.matches());
